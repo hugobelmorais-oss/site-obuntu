@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1e4fa8"/>
+      <stop offset="100%" stop-color="#0a1f44"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="110" cy="110" r="106" fill="url(#bg)" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Decorative arc rings -->
+  <circle cx="110" cy="110" r="98" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <circle cx="110" cy="110" r="88" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.8"/>
+
+  <!-- Network / territory nodes -->
+  <g opacity="0.35" stroke="#60a5fa" stroke-width="1" fill="#60a5fa">
+    <line x1="110" y1="38" x2="72"  y2="68"/>
+    <line x1="110" y1="38" x2="148" y2="68"/>
+    <line x1="72"  y1="68" x2="55"  y2="108"/>
+    <line x1="148" y1="68" x2="165" y2="108"/>
+    <line x1="55"  y1="108" x2="72" y2="148"/>
+    <line x1="165" y1="108" x2="148" y2="148"/>
+    <line x1="72"  y1="148" x2="110" y2="168"/>
+    <line x1="148" y1="148" x2="110" y2="168"/>
+    <!-- cross lines -->
+    <line x1="72"  y1="68"  x2="148" y2="68" stroke-dasharray="3,3"/>
+    <line x1="55"  y1="108" x2="165" y2="108" stroke-dasharray="3,3"/>
+    <line x1="72"  y1="148" x2="148" y2="148" stroke-dasharray="3,3"/>
+
+    <!-- nodes -->
+    <circle cx="110" cy="38"  r="3.5" filter="url(#glow)"/>
+    <circle cx="72"  cy="68"  r="2.5"/>
+    <circle cx="148" cy="68"  r="2.5"/>
+    <circle cx="55"  cy="108" r="2.5"/>
+    <circle cx="165" cy="108" r="2.5"/>
+    <circle cx="72"  cy="148" r="2.5"/>
+    <circle cx="148" cy="148" r="2.5"/>
+    <circle cx="110" cy="168" r="3.5" filter="url(#glow)"/>
+  </g>
+
+  <!-- Central inner circle -->
+  <circle cx="110" cy="108" r="46" fill="rgba(37,99,235,0.18)" stroke="#3b82f6" stroke-width="1.2"/>
+
+  <!-- OBUNTU text -->
+  <text x="110" y="115" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="26" font-weight="bold" letter-spacing="3"
+        fill="white">OBUNTU</text>
+
+  <!-- Sub text -->
+  <text x="110" y="145" text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="7" letter-spacing="1.5" fill="rgba(255,255,255,0.55)"
+        text-transform="uppercase">OBSERVATÓRIO · UFPB</text>
+
+  <!-- Bottom tagline arc -->
+  <path id="arc" d="M 30 155 A 88 88 0 0 0 190 155" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="6.5" fill="rgba(255,255,255,0.35)" letter-spacing="1">
+    <textPath href="#arc" startOffset="50%" text-anchor="middle">CONFLITOS TERRITORIAIS · DIREITOS HUMANOS</textPath>
+  </text>
+
+  <!-- Top accent dot -->
+  <circle cx="110" cy="12" r="4" fill="#3b82f6" opacity="0.7"/>
+</svg>
