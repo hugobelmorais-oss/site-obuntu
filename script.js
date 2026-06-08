@@ -53,7 +53,7 @@ if (menuToggle && mainNav) {
 //  Para ativar: cole o URL do seu Apps Script em DRIVE_API_URL
 //  (veja DRIVE_SETUP.md para instruções)
 // ══════════════════════════════════════════════════════
-const DRIVE_API_URL = ''; // ← cole o URL do Apps Script aqui
+const DRIVE_API_URL = 'https://script.google.com/macros/s/AKfycbyTejATNvTJxONPCx6gYTgjhA2Ee3wMXKgQQO68AfXfUJWVopUoSGKqZuTIygbVBwLW/exec'; // ← cole o URL do Apps Script aqui
 
 const MIME_LABELS = {
   'application/pdf':                                                         { label: 'PDF',           icon: '📄', type: 'pdf'   },
