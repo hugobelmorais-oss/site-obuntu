@@ -133,6 +133,44 @@ a { text-decoration: none; color: inherit; }
 /* rede de pontos SVG */
 .hero-dots { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
 
+/* ── Hero two-column layout ── */
+.hero-two-col {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+}
+.hero-logo-col {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-logo-wrap {
+  background: #fff;
+  border-radius: 28px;
+  padding: clamp(12px, 2.5vw, 22px);
+  box-shadow:
+    0 8px 40px rgba(0,0,0,.35),
+    0 0 0 1px rgba(255,255,255,.12);
+  animation: heroIn 1.1s ease both, logoPulse 6s ease-in-out 1.5s infinite;
+}
+@keyframes logoPulse {
+  0%,100% { box-shadow: 0 8px 40px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.12); transform: translateY(0); }
+  50%      { box-shadow: 0 18px 60px rgba(0,0,0,.4), 0 0 32px rgba(255,255,255,.08); transform: translateY(-6px); }
+}
+.hero-logo-img {
+  display: block;
+  width: clamp(200px, 28vw, 380px);
+  height: auto;
+}
+.hero-text-col {
+  flex: 1;
+  text-align: left;
+}
+.hero-text-col .hero-stats { justify-content: flex-start; }
+.hero-text-col .hero-links  { justify-content: flex-start; }
+
 .hero-content {
   position: relative; z-index: 1;
   text-align: center;
@@ -914,6 +952,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 @media (max-width: 768px) {
+  .hero-two-col { flex-direction: column; text-align: center; padding: 0 1.5rem; gap: 2rem; }
+  .hero-logo-img { width: clamp(160px, 55vw, 260px); }
+  .hero-text-col { text-align: center; }
+  .hero-text-col .hero-stats { justify-content: center; }
+  .hero-text-col .hero-links  { justify-content: center; }
   .two-col { grid-template-columns: 1fr; gap: 2rem; }
   .team-grid { grid-template-columns: 1fr 1fr; }
   .sentipensar-grid { grid-template-columns: 1fr; }
