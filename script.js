@@ -76,13 +76,17 @@ function driveCard(file) {
   const date = file.createdTime
     ? new Date(file.createdTime).toLocaleDateString('pt-BR', { year:'numeric', month:'short' })
     : '';
+  const displayName = file.name.replace(/\.(pdf|docx?|pptx?|xlsx?)$/i, '').replace(/[_;]/g, ' ').trim();
   return `
     <a href="${file.url}" target="_blank" rel="noopener"
-       class="drive-card" data-filetype="${info.type}">
+       class="drive-card" data-filetype="${info.type}" title="${file.name}">
       <span class="drive-card-icon">${info.icon}</span>
-      <span class="drive-card-badge">${info.label}</span>
-      <span class="drive-card-name">${file.name}</span>
-      ${date ? `<span class="drive-card-date">${date}</span>` : ''}
+      <span class="drive-card-info">
+        <span class="drive-card-badge">${info.label}</span>
+        <span class="drive-card-name">${displayName}</span>
+        ${date ? `<span class="drive-card-date">${date}</span>` : ''}
+      </span>
+      <span class="drive-card-arrow">›</span>
     </a>`;
 }
 
