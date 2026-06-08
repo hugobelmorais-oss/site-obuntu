@@ -651,6 +651,76 @@ a { text-decoration: none; color: inherit; }
 .project-item strong { display: block; color: var(--blue-900); font-size: .95rem; margin-bottom: .25rem; }
 .project-item p { font-size: .87rem; margin: 0; }
 
+/* ===== DRIVE INTEGRATION ===== */
+.drive-section {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  margin-bottom: 3rem;
+}
+.drive-header {
+  display: flex; align-items: center; gap: .75rem; margin-bottom: 1.25rem;
+}
+.drive-icon { display: flex; align-items: center; flex-shrink: 0; }
+.drive-title { color: white; font-size: 1.05rem; font-weight: 600; flex: 1; margin: 0; }
+.drive-badge {
+  font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  padding: .2rem .65rem; border-radius: 99px;
+}
+.drive-badge.loading { background: rgba(255,255,255,.15); color: rgba(255,255,255,.6); }
+.drive-badge.ok      { background: rgba(52,211,153,.25); color: #6ee7b7; }
+.drive-badge.error   { background: rgba(248,113,113,.2); color: #fca5a5; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.drive-spinner {
+  width: 32px; height: 32px; border: 3px solid rgba(255,255,255,.15);
+  border-top-color: rgba(255,255,255,.7); border-radius: 50%;
+  animation: spin .8s linear infinite; margin: 0 auto 1rem;
+}
+.drive-placeholder { text-align: center; padding: 2rem; color: rgba(255,255,255,.5); }
+
+.drive-filters {
+  display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem;
+}
+.drive-filter {
+  background: rgba(255,255,255,.1); color: rgba(255,255,255,.7);
+  border: 1px solid rgba(255,255,255,.15); border-radius: 99px;
+  padding: .3rem .85rem; font-size: .78rem; font-weight: 500; cursor: pointer;
+  transition: all .2s;
+}
+.drive-filter:hover  { background: rgba(255,255,255,.18); color: white; }
+.drive-filter.active { background: white; color: var(--blue-800); border-color: white; }
+
+.drive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: .85rem;
+}
+.drive-card {
+  display: flex; flex-direction: column; gap: .4rem;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px; padding: 1rem 1rem .85rem;
+  text-decoration: none; transition: all .22s; position: relative;
+}
+.drive-card:hover {
+  background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3);
+  transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+.drive-card-icon  { font-size: 1.6rem; line-height: 1; }
+.drive-card-badge {
+  font-size: .65rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--blue-300); margin-top: .1rem;
+}
+.drive-card-name  { font-size: .88rem; color: white; font-weight: 500; line-height: 1.35; flex: 1; }
+.drive-card-date  { font-size: .72rem; color: rgba(255,255,255,.45); margin-top: .2rem; }
+
+.drive-not-configured {
+  color: rgba(255,255,255,.55); font-size: .88rem; text-align: center; padding: 1.5rem;
+}
+.drive-not-configured a { color: var(--blue-300); }
+.drive-error { color: rgba(255,255,255,.5); text-align: center; padding: 1rem; font-size: .9rem; }
+
 /* ===== PRODUÇÕES ===== */
 .prod-categories { display: flex; flex-direction: column; gap: 3rem; }
 .prod-category { }
