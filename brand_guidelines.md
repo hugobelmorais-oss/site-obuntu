@@ -181,11 +181,11 @@ Todos os templates estão na conta Canva da organização, com IDs abaixo.
 
 | Template | Formato | Design ID Canva |
 |---|---|---|
-| Post institucional | 1080×1080px | *(a preencher)* |
-| Post de campanha | 1080×1080px | *(a preencher)* |
-| Stories | 1080×1920px | *(a preencher)* |
-| Carrossel (5 slides) | 1080×1080px | *(a preencher)* |
-| Capa de destaque | 1080×1080px | *(a preencher)* |
+| Post institucional | 1080×1080px | `DAHMTMIPodU` |
+| Post de campanha | 1080×1080px | `DAHMTP_vPI8` |
+| Stories | 1080×1920px | `DAHMTAK3juQ` |
+| Carrossel (5 slides) | 1080×1080px | `DAHMTDiytOQ` |
+| Capa de destaque | 1080×1080px | `DAHMTtJYYYk` |
 
 ### 7.3 Arquivos de Logo (`assets/images/`)
 
