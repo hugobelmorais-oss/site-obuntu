@@ -44,53 +44,53 @@ STYLES = """\
 
     <style:style style:name="Standard" style:family="paragraph" style:class="text">
       <style:paragraph-properties fo:margin-top="0cm" fo:margin-bottom="0.212cm"/>
-      <style:text-properties fo:font-size="11pt" style:font-name="Calibri" fo:color="#1c1c1c"/>
+      <style:text-properties fo:font-size="11pt" style:font-name="Source Sans Pro" fo:color="#1c1c1c"/>
     </style:style>
 
     <style:style style:name="Heading1" style:family="paragraph"
                  style:parent-style-name="Standard" style:class="text">
       <style:paragraph-properties fo:text-align="left" fo:margin-top="0.4cm" fo:margin-bottom="0.2cm"/>
       <style:text-properties fo:font-size="18pt" fo:font-weight="bold"
-                             style:font-name="Georgia" fo:color="#4a7a5c"/>
+                             style:font-name="Fraunces" fo:color="#b54e31"/>
     </style:style>
 
     <style:style style:name="Heading2" style:family="paragraph"
                  style:parent-style-name="Standard" style:class="text">
       <style:paragraph-properties fo:margin-top="0.3cm" fo:margin-bottom="0.15cm"/>
       <style:text-properties fo:font-size="14pt" fo:font-weight="bold"
-                             style:font-name="Georgia" fo:color="#2d3d2f"/>
+                             style:font-name="Fraunces" fo:color="#0f1f3d"/>
     </style:style>
 
     <style:style style:name="OrgName" style:family="paragraph"
                  style:parent-style-name="Standard" style:class="text">
       <style:paragraph-properties fo:text-align="center" fo:margin-bottom="0.1cm"/>
       <style:text-properties fo:font-size="18pt" fo:font-weight="bold"
-                             style:font-name="Georgia" fo:color="#2d3d2f"/>
+                             style:font-name="Fraunces" fo:color="#0f1f3d"/>
     </style:style>
 
     <style:style style:name="Tagline" style:family="paragraph"
                  style:parent-style-name="Standard" style:class="text">
       <style:paragraph-properties fo:text-align="center" fo:margin-bottom="0.3cm"/>
-      <style:text-properties fo:font-size="8pt" style:font-name="Georgia" fo:color="#8c9e8c"/>
+      <style:text-properties fo:font-size="8pt" style:font-name="Fraunces" fo:color="#9e8e7c"/>
     </style:style>
 
     <style:style style:name="Footer" style:family="paragraph"
                  style:parent-style-name="Standard" style:class="text">
       <style:paragraph-properties fo:text-align="center" fo:margin-top="0.3cm"/>
-      <style:text-properties fo:font-size="7pt" style:font-name="Calibri" fo:color="#8c9e8c"/>
+      <style:text-properties fo:font-size="7pt" style:font-name="Source Sans Pro" fo:color="#9e8e7c"/>
     </style:style>
 
     <style:style style:name="FieldLabel" style:family="paragraph"
                  style:parent-style-name="Standard" style:class="text">
       <style:paragraph-properties fo:margin-bottom="0.1cm"/>
-      <style:text-properties fo:font-size="10pt" style:font-name="Calibri" fo:color="#1c1c1c"/>
+      <style:text-properties fo:font-size="10pt" style:font-name="Source Sans Pro" fo:color="#1c1c1c"/>
     </style:style>
 
     <style:style style:name="Cover" style:family="paragraph"
                  style:parent-style-name="Standard" style:class="text">
       <style:paragraph-properties fo:text-align="center" fo:margin-bottom="0.4cm"/>
       <style:text-properties fo:font-size="28pt" fo:font-weight="bold"
-                             style:font-name="Georgia" fo:color="#4a7a5c"/>
+                             style:font-name="Fraunces" fo:color="#b54e31"/>
     </style:style>
 
   </office:styles>
@@ -133,7 +133,7 @@ def hr():
 def field_para(label, value):
     return (
         f'<text:p text:style-name="FieldLabel">'
-        f'<text:span fo:font-weight="bold" fo:color="#2d3d2f">{_esc(label)} </text:span>'
+        f'<text:span fo:font-weight="bold" fo:color="#0f1f3d">{_esc(label)} </text:span>'
         f'{_esc(value)}'
         f'</text:p>\n'
     )
@@ -141,7 +141,7 @@ def field_para(label, value):
 
 def header_block(subtitulo=""):
     out = para("DIGNITATIS", style="OrgName")
-    out += para("Dignidade · Dignidad · Tekó Porã · Ọlá", style="Tagline")
+    out += para("Direitos Humanos · Paraíba · Brasil", style="Tagline")
     if subtitulo:
         out += para(subtitulo, style="Tagline")
     out += hr()
@@ -224,7 +224,7 @@ def gerar_relatorio_odt():
     body += hr()
     body += para("RELATÓRIO", style="Cover")
     body += para("[Título do Relatório]", style="Heading1")
-    body += para("Dignidade · Dignidad · Tekó Porã · Ọlá", style="Tagline")
+    body += para("Direitos Humanos · Paraíba · Brasil", style="Tagline")
     body += hr()
     body += para("Período: [mês/AAAA – mês/AAAA]", style="Tagline")
     body += para("Elaborado por: [Nome/Equipe]", style="Tagline")

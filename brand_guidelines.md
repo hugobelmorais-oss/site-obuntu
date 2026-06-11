@@ -1,162 +1,235 @@
 # Dignitatis — Manual de Identidade Visual
 
-> Dignidade · Dignidad · Tekó Porã · Ọlá
+> *Direitos Humanos · Paraíba · Brasil*
 
 ---
 
 ## 1. Sobre a Organização
 
-A **Dignitatis** é uma organização de direitos humanos comprometida com a promoção da dignidade humana em suas múltiplas dimensões culturais, linguísticas e territoriais. O nome "Dignitatis" — forma genitiva latina de *dignitas* — traduz-se como "da dignidade", afirmando que toda ação da organização emana desse valor universal.
+A **Dignitatis** é uma organização de direitos humanos com mais de 20 anos de atuação, sediada na Paraíba. Com a retomada de suas atividades, a Dignitatis reafirma seu compromisso com duas frentes fundamentais e complementares:
+
+- **Litigância estratégica** — atuação formal perante tribunais nacionais e instâncias internacionais (como a Corte Interamericana de Direitos Humanos e mecanismos da ONU), com rigor técnico-jurídico e visibilidade pública dos casos.
+- **Assessoria jurídica popular** — suporte jurídico direto, acessível e próximo das comunidades, movimentos sociais e grupos em situação de vulnerabilidade na Paraíba e no Nordeste.
+
+A nova identidade visual reflete esse duplo caráter: séria o suficiente para tribunais e interlocução institucional, e humana o suficiente para o trabalho de base.
 
 ---
 
-## 2. Logo
+## 2. Valores da Marca
 
-### 2.1 Elementos
-
-O logo da Dignitatis é composto por três elementos:
-
-1. **Símbolo (globo geométrico):** representação das Américas em projeção limpa, em verde institucional. Evoca presença global e compromisso com os povos do continente.
-2. **Anel multilíngue:** texto circular ao redor do símbolo com "Dignidade · Dignidad · Tekó Porã · Ọlá" (Português · Espanhol · Tupi · Iorubá), reafirmando que a dignidade transcende línguas e culturas.
-3. **Wordmark:** nome "DIGNITATIS" em tipografia serifada de spacing amplo, em verde-escuro.
-
-### 2.2 Variantes
-
-| Variante | Uso |
+| Valor | O que significa visualmente |
 |---|---|
-| Completo (símbolo + anel + wordmark) | Uso principal: documentos, site, materiais institucionais |
-| Compacto (símbolo + wordmark) | Uso secundário: quando o anel não for legível em escala pequena |
-| Ícone (só símbolo) | Avatares, favicons, redes sociais (foto de perfil) |
-| Monocromático preto | Impressão em preto e branco, carimbos |
-| Monocromático branco | Fundos escuros, camisetas, brindes |
-
-### 2.3 Espaço de Proteção
-
-O logo deve ter ao redor uma área de proteção equivalente à **altura da letra "D" da wordmark** em todos os lados. Nenhum elemento externo deve invadir essa área.
-
-### 2.4 Tamanho Mínimo
-
-- **Digital:** 120px de largura (versão completa)
-- **Impresso:** 30mm de largura (versão completa)
-- Abaixo desses tamanhos, usar sempre a variante **ícone**.
-
-### 2.5 Usos Proibidos
-
-- Não distorcer as proporções do logo
-- Não alterar as cores fora da paleta oficial
-- Não aplicar sombras, contornos ou efeitos visuais
-- Não rotacionar ou espelhar o logo
-- Não usar o logo sobre fundos que prejudiquem a leitura
-- Não recriar o logo em tipografia diferente da especificada
+| **Dignidade** | Tipografia que inspira respeito sem distância |
+| **Justiça** | Paleta que evoca seriedade e compromisso |
+| **Enraizamento** | Terracota que conecta ao solo nordestino |
+| **Acessibilidade** | Hierarquia clara, legibilidade em qualquer escala |
+| **Independência** | Identidade própria, distinta de órgãos estatais |
 
 ---
 
-## 3. Paleta de Cores
+## 3. Logotipo
 
-### 3.1 Cores Primárias
+### 3.1 O Símbolo
+
+Figura humana geométrica estilizada com braços erguidos ou estendidos — postura de proteção e advocacia. Construída a partir de formas geométricas simples, sem detalhes, forte e legível em qualquer escala. A figura representa a centralidade da pessoa humana no trabalho da organização: não abstrata, não decorativa — uma pessoa de pé, reivindicando dignidade.
+
+### 3.2 Wordmark
+
+**DIGNITATIS** em tipografia serifada contemporânea (Fraunces Bold), caixa alta, tracking amplo. A força do nome está no equilíbrio entre a solenidade do latim e a abertura da postura contemporânea.
+
+### 3.3 Variantes
+
+| Variante | Arquivo | Uso |
+|---|---|---|
+| Completo (símbolo + wordmark) | `dignitatis-logo-completo.png` | Uso principal: documentos, site, materiais |
+| Compacto (símbolo + wordmark empilhados) | `dignitatis-logo-compacto.png` | Cabeçalhos estreitos, e-mail |
+| Ícone (só símbolo) | `dignitatis-logo-icone.png` | Avatar, favicon, selo, carimbo |
+| Monocromático escuro | `dignitatis-logo-escuro.png` | Documentos P&B, impressão simples |
+| Versão branca | `dignitatis-logo-branco.png` | Fundos escuros (navy, terracota) |
+
+### 3.4 Área de Proteção
+
+Espaço mínimo ao redor do logo equivalente à **altura da figura humana** em todos os lados. Nenhum elemento externo deve invadir essa área.
+
+### 3.5 Tamanho Mínimo
+
+- **Digital**: 100px de largura (versão completa) / 32px (ícone)
+- **Impresso**: 25mm de largura (versão completa) / 8mm (ícone)
+
+### 3.6 Usos Proibidos
+
+- Não distorcer proporções
+- Não alterar cores fora da paleta oficial
+- Não aplicar sombras, contornos ou efeitos
+- Não rotacionar ou espelhar
+- Não recriar em tipografia diferente
+- Não usar sobre fundos que comprometam a leitura
+
+---
+
+## 4. Paleta de Cores
+
+### 4.1 Cores Primárias
 
 | Nome | Hex | RGB | CMYK | Uso |
 |---|---|---|---|---|
-| Verde Institucional | `#4A7A5C` | 74, 122, 92 | C=39 M=0 Y=25 K=52 | Cor principal da marca |
-| Verde-Escuro | `#2D3D2F` | 45, 61, 47 | C=26 M=0 Y=23 K=76 | Textos, elementos de peso |
-| Creme | `#F4F1EB` | 244, 241, 235 | C=0 M=1 Y=4 K=4 | Fundos de documentos e slides |
-| Verde-Apoio | `#8C9E8C` | 140, 158, 140 | C=11 M=0 Y=11 K=38 | Elementos secundários, rodapés |
-| Preto Suave | `#1C1C1C` | 28, 28, 28 | C=0 M=0 Y=0 K=89 | Corpo de texto em documentos |
+| **Terracota** | `#B54E31` | 181, 78, 49 | C=0 M=57 Y=73 K=29 | Cor primária, símbolo, destaque |
+| **Azul-Noite** | `#0F1F3D` | 15, 31, 61 | C=75 M=49 Y=0 K=76 | Fundos formais, wordmark, headers |
+| **Areia** | `#F9F5EF` | 249, 245, 239 | C=0 M=2 Y=4 K=2 | Fundo de documentos e slides |
+| **Argila** | `#E8C49A` | 232, 196, 154 | C=0 M=15 Y=34 K=9 | Acento quente, divisores |
+| **Azul-Apoio** | `#4A6580` | 74, 101, 128 | C=42 M=21 Y=0 K=50 | Texto em fundo escuro, captions |
+| **Carvão** | `#1C1C1C` | 28, 28, 28 | C=0 M=0 Y=0 K=89 | Corpo de texto em fundo claro |
+| **Cinza-Quente** | `#9E8E7C` | 158, 142, 124 | C=0 M=10 Y=21 K=38 | Metadata, rodapés, taglines |
 
-### 3.2 Cores de Apoio (uso restrito)
+### 4.2 Combinações Aprovadas
 
-| Nome | Hex | Uso |
+**Modo Formal** (documentos jurídicos, relatórios, apresentações institucionais):
+- Fundo `#F9F5EF` (Areia) + texto `#1C1C1C` (Carvão) + títulos `#0F1F3D` (Azul-Noite) + acento `#B54E31` (Terracota)
+
+**Modo Ativista** (redes sociais, campanhas, comunicados públicos):
+- Fundo `#0F1F3D` (Azul-Noite) + elementos `#B54E31` (Terracota) + texto `#F9F5EF` (Areia)
+- Ou: Fundo `#B54E31` (Terracota) + texto `#F9F5EF` (Areia)
+
+### 4.3 Acessibilidade (WCAG)
+
+| Combinação | Ratio | Nível |
 |---|---|---|
-| Branco | `#FFFFFF` | Fundos limpos, versão branca do logo |
-| Cinza-claro | `#E8E8E4` | Divisores, linhas de tabela |
+| `#B54E31` sobre `#F9F5EF` | 4,6:1 | AA ✓ |
+| `#0F1F3D` sobre `#F9F5EF` | 14,2:1 | AAA ✓ |
+| `#F9F5EF` sobre `#B54E31` | 4,6:1 | AA ✓ |
+| `#F9F5EF` sobre `#0F1F3D` | 14,2:1 | AAA ✓ |
 
 ---
 
-## 4. Tipografia
+## 5. Tipografia
 
-### 4.1 Família Principal
+### 5.1 Fontes Primárias
 
-| Função | Fonte | Peso | Exemplo de Uso |
+| Função | Fonte | Peso(s) | Disponibilidade |
 |---|---|---|---|
-| Display / Títulos | **Cormorant Garamond** | Regular, SemiBold, Bold | Títulos de documentos, nome da org |
-| Corpo de texto | **Inter** | Regular (400), Medium (500), SemiBold (600) | Parágrafos, legendas, campos |
-| Alternativa serifada | **Georgia** | Regular, Bold | Quando Cormorant não estiver disponível |
-| Alternativa sem-serifa | **Calibri** | Regular, Bold | Quando Inter não estiver disponível |
+| Display / Títulos | **Fraunces** | Bold (700), SemiBold (600) | Google Fonts (gratuita) |
+| Corpo / UI | **Source Sans Pro** | Regular (400), SemiBold (600) | Google Fonts (gratuita) |
 
-### 4.2 Hierarquia Tipográfica
+Para instalar: [fonts.google.com/specimen/Fraunces](https://fonts.google.com/specimen/Fraunces) e [fonts.google.com/specimen/Source+Sans+3](https://fonts.google.com/specimen/Source+Sans+3)
+
+### 5.2 Hierarquia Tipográfica
 
 | Nível | Fonte | Tamanho | Peso | Cor |
 |---|---|---|---|---|
-| H1 (capa/título principal) | Cormorant Garamond | 28–54pt | Bold | Verde-Escuro ou Verde Institucional |
-| H2 (seção) | Cormorant Garamond | 18–22pt | SemiBold | Verde Institucional |
-| H3 (subseção) | Inter | 14–16pt | SemiBold | Verde-Escuro |
-| Corpo | Inter | 11–12pt | Regular | Preto Suave |
-| Legenda / Rodapé | Inter | 7–9pt | Regular | Verde-Apoio |
-| Tagline (anel) | Cormorant Garamond | 8–10pt | Regular | Verde-Apoio |
+| H1 — Capa / Display | Fraunces | 42–60pt | Bold 700 | Azul-Noite ou Terracota |
+| H2 — Seção | Fraunces | 20–28pt | SemiBold 600 | Azul-Noite |
+| H3 — Subseção | Source Sans Pro | 14–16pt | SemiBold 600 | Terracota |
+| Corpo | Source Sans Pro | 11–12pt | Regular 400 | Carvão |
+| Caption / Rodapé | Source Sans Pro | 7–9pt | Regular 400 | Cinza-Quente |
+| Tagline / Epígrafe | Fraunces | 9–11pt | Italic | Azul-Apoio |
+
+**Regra fundamental**: Fraunces é usado **exclusivamente** para títulos e destaque. Nunca usar Fraunces em corpo de texto abaixo de 12pt em documentos.
+
+### 5.3 Fontes de Fallback
+
+- Fraunces → **Georgia** → Times New Roman
+- Source Sans Pro → **Calibri** → Arial
 
 ---
 
-## 5. Tom e Voz
+## 6. Tom e Voz
 
-- **Institucional e acessível:** linguagem clara, respeitosa, sem jargão excessivo
-- **Plural e inclusivo:** reconhece diversidade de povos, culturas e línguas
-- **Comprometido:** afirmativo, direto, sem ambiguidade sobre valores
-- Evitar linguagem de urgência exagerada ou apelo emocional manipulador
+A Dignitatis fala de duas maneiras distintas — ambas verdadeiras, ambas necessárias:
+
+### Voz Formal (litigância, relatórios, petições, correspondência institucional)
+- Linguagem técnica e precisa, sem ambiguidade
+- Fundamentada em normas, tratados e jurisprudência
+- Serena e assertiva — não apologética
+- *"A Dignitatis requer que seja determinado..."* / *"Nos termos do artigo X da Convenção..."*
+
+### Voz Acessível (assessoria popular, redes sociais, comunicados públicos)
+- Linguagem clara, sem jargão desnecessário
+- Direta, próxima, respeitosa
+- Politicamente comprometida sem ser panfletária
+- *"Direito tem que ser de todo mundo."* / *"A comunidade do X tem direito a ser ouvida."*
+
+**O que nunca muda**: clareza, respeito, independência, e o reconhecimento de que a pessoa atendida é sujeito de direitos — não objeto de assistência.
 
 ---
 
-## 6. Templates e Materiais
+## 7. Templates e Materiais
 
-### 6.1 Templates de Documentos (repositório: `assets/templates/`)
+### 7.1 Templates de Documentos (`assets/templates/`)
 
-| Arquivo | Formato | Descrição |
+| Arquivo | Formatos | Descrição |
 |---|---|---|
-| `dignitatis_oficio.docx` / `.odt` | Word / LibreOffice | Ofício institucional padrão |
+| `dignitatis_oficio.docx` / `.odt` | Word / LibreOffice | Ofício institucional padrão A4 |
 | `dignitatis_relatorio.docx` / `.odt` | Word / LibreOffice | Relatório com capa, sumário e seções |
 | `dignitatis_comunicado.docx` / `.odt` | Word / LibreOffice | Comunicado / carta institucional |
-| `dignitatis_apresentacao.pptx` | PowerPoint | Apresentação (5 layouts: capa, sumário, conteúdo, citação, encerramento) |
+| `dignitatis_apresentacao.pptx` | PowerPoint | Apresentação (5 layouts) |
 
-### 6.2 Templates de Redes Sociais (Canva)
+**Para regenerar os templates** (após instalar as fontes):
+```bash
+python3 assets/templates/gerar_documentos.py
+python3 assets/templates/gerar_odt.py
+```
 
-Todos os templates estão na conta Canva da organização.
+### 7.2 Templates de Redes Sociais (Canva)
 
-| Template | Dimensão | Design ID Canva |
+Todos os templates estão na conta Canva da organização, com IDs abaixo.
+
+| Template | Formato | Design ID Canva |
 |---|---|---|
-| Post institucional | 1080×1080px | *(a preencher após criação)* |
-| Post de campanha | 1080×1080px | *(a preencher após criação)* |
-| Carrossel (3 slides) | 1080×1080px | *(a preencher após criação)* |
-| Stories | 1080×1920px | *(a preencher após criação)* |
-| Capa de destaque | 1080×1080px | *(a preencher após criação)* |
+| Post institucional | 1080×1080px | *(a preencher)* |
+| Post de campanha | 1080×1080px | *(a preencher)* |
+| Stories | 1080×1920px | *(a preencher)* |
+| Carrossel (5 slides) | 1080×1080px | *(a preencher)* |
+| Capa de destaque | 1080×1080px | *(a preencher)* |
 
-### 6.3 Logo (repositório: `assets/images/`)
+### 7.3 Arquivos de Logo (`assets/images/`)
 
 | Arquivo | Formato | Uso |
 |---|---|---|
 | `dignitatis-logo-completo.png` | PNG (fundo transparente) | Uso geral digital |
-| `dignitatis-logo-compacto.png` | PNG (fundo transparente) | Uso compacto |
+| `dignitatis-logo-compacto.png` | PNG (fundo transparente) | Cabeçalhos, e-mails |
+| `dignitatis-logo-icone.png` | PNG (fundo branco quadrado) | Avatares, favicon |
+| `dignitatis-logo-escuro.png` | PNG (fundo transparente) | Impressão P&B |
 | `dignitatis-logo-branco.png` | PNG (fundo transparente) | Fundos escuros |
-| `dignitatis-logo-preto.png` | PNG (fundo transparente) | Impressão P&B |
-
-*(Exportar do Canva após aprovação do logo final)*
 
 ---
 
-## 7. Aplicações em Redes Sociais
+## 8. Aplicações
 
-### Instagram
+### 8.1 Documentos Formais
+- Cabeçalho: logo compacto + "DIGNITATIS" em Fraunces Bold Azul-Noite + tagline em Cinza-Quente
+- Rodapé: dados institucionais em Source Sans Pro 7pt Cinza-Quente
+- Linha decorativa: Terracota, espessura 1pt
 
-- **Foto de perfil:** variante ícone (só símbolo), fundo branco ou creme
-- **Bio:** máx. 150 caracteres, incluir link do site
-- **Grid:** alternar posts verdes (fundo `#4A7A5C`) com posts creme (`#F4F1EB`)
-- **Stories:** sempre incluir logo compacto no topo ou rodapé
+### 8.2 Comunicações Digitais (e-mail, PDF)
+- Assinatura de e-mail: logo ícone (32px) + nome em Fraunces + cargo em Source Sans Pro
+- Fundo de PDF: Areia `#F9F5EF`
+- Links: Terracota sublinhado
+
+### 8.3 Instagram
+- Foto de perfil: logo ícone, fundo Areia ou Azul-Noite
+- Grid: alternar entre posts Areia (fundo claro) e posts Azul-Noite (fundo escuro)
+- Stories: sempre incluir logo na zona segura superior
+- Destaque: ícone branco sobre Azul-Noite
+
+### 8.4 Apresentações (PPTX)
+- Slide capa: Azul-Noite + barra Terracota + título Areia
+- Slides conteúdo: Areia + títulos Azul-Noite + destaque Terracota
+- Slide citação: fundo Terracota + texto Areia
+- Slide encerramento: Azul-Noite + nome da org em Terracota
 
 ---
 
-## 8. Regeneração deste Manual
+## 9. Regeneração
 
-Este arquivo (`brand_guidelines.md`) está versionado no repositório Git.  
-Para gerar os templates de documentos novamente: `python3 assets/templates/gerar_documentos.py`
+```bash
+# Gerar todos os documentos (.docx, .pptx, .odt)
+cd /caminho/para/o/repositório
+python3 assets/templates/gerar_documentos.py
+python3 assets/templates/gerar_odt.py
+```
+
+As fontes **Fraunces** e **Source Sans Pro** devem estar instaladas no sistema para renderização correta. Se não estiverem, os documentos abrem com fallback Georgia/Calibri e podem ser aceitos dessa forma.
 
 ---
 
-*Dignitatis — Dignidade · Dignidad · Tekó Porã · Ọlá*
+*Dignitatis — Direitos Humanos · Paraíba · Brasil*

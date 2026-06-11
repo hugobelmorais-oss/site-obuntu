@@ -17,18 +17,32 @@ from pptx.enum.text import PP_ALIGN
 
 OUT = Path(__file__).parent
 
-# ── Paleta ──────────────────────────────────────────────────────────────────
-GREEN      = RGBColor(0x4A, 0x7A, 0x5C)   # #4A7A5C verde institucional
-DARK_GREEN = RGBColor(0x2D, 0x3D, 0x2F)   # #2D3D2F quase-preto
-CREAM      = RGBColor(0xF4, 0xF1, 0xEB)   # #F4F1EB fundo documentos
-GRAY_MID   = RGBColor(0x8C, 0x9E, 0x8C)   # #8C9E8C verde-apoio
-BLACK_SOFT = RGBColor(0x1C, 0x1C, 0x1C)   # #1C1C1C preto suave
+# ── Paleta Terracota & Azul-Noite ────────────────────────────────────────────
+TERRACOTA   = RGBColor(0xB5, 0x4E, 0x31)   # #B54E31 cor primária
+AZUL_NOITE  = RGBColor(0x0F, 0x1F, 0x3D)   # #0F1F3D fundos formais
+AREIA       = RGBColor(0xF9, 0xF5, 0xEF)   # #F9F5EF fundo documentos
+CINZA_QUENTE= RGBColor(0x9E, 0x8E, 0x7C)   # #9E8E7C captions/rodapé
+CARVAO      = RGBColor(0x1C, 0x1C, 0x1C)   # #1C1C1C corpo de texto
 
-PPTX_GREEN      = PPTXRGBColor(0x4A, 0x7A, 0x5C)
-PPTX_DARK_GREEN = PPTXRGBColor(0x2D, 0x3D, 0x2F)
-PPTX_CREAM      = PPTXRGBColor(0xF4, 0xF1, 0xEB)
-PPTX_GRAY       = PPTXRGBColor(0x8C, 0x9E, 0x8C)
-PPTX_BLACK      = PPTXRGBColor(0x1C, 0x1C, 0x1C)
+# aliases internos (usados nas funções abaixo)
+GREEN      = TERRACOTA
+DARK_GREEN = AZUL_NOITE
+CREAM      = AREIA
+GRAY_MID   = CINZA_QUENTE
+BLACK_SOFT = CARVAO
+
+PPTX_TERRA  = PPTXRGBColor(0xB5, 0x4E, 0x31)
+PPTX_NOITE  = PPTXRGBColor(0x0F, 0x1F, 0x3D)
+PPTX_AREIA  = PPTXRGBColor(0xF9, 0xF5, 0xEF)
+PPTX_CINZA  = PPTXRGBColor(0x9E, 0x8E, 0x7C)
+PPTX_CARVAO = PPTXRGBColor(0x1C, 0x1C, 0x1C)
+
+# aliases para as funções de slides que usam os nomes antigos
+PPTX_GREEN      = PPTX_TERRA
+PPTX_DARK_GREEN = PPTX_NOITE
+PPTX_CREAM      = PPTX_AREIA
+PPTX_GRAY       = PPTX_CINZA
+PPTX_BLACK      = PPTX_CARVAO
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -43,7 +57,7 @@ def set_cell_bg(cell, hex_color: str):
     tcPr.append(shd)
 
 
-def add_hr(doc: Document, color: str = "4A7A5C", thickness: int = 12):
+def add_hr(doc: Document, color: str = "B54E31", thickness: int = 12):
     """Adiciona linha horizontal decorativa."""
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(0)
@@ -74,7 +88,7 @@ def header_block(doc: Document, subtitulo: str = ""):
     # Anel multilíngue (tagline)
     p2 = doc.add_paragraph()
     p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run2 = p2.add_run("Dignidade · Dignidad · Tekó Porã · Ọlá")
+    run2 = p2.add_run("Direitos Humanos · Paraíba · Brasil")
     run2.font.size = Pt(8)
     run2.font.color.rgb = GRAY_MID
     run2.font.name = "Georgia"
@@ -223,7 +237,7 @@ def gerar_relatorio():
     r2.font.size = Pt(18); r2.font.color.rgb = DARK_GREEN; r2.font.name = "Georgia"
 
     doc.add_paragraph()
-    p_sub = doc.add_paragraph("Dignidade · Dignidad · Tekó Porã · Ọlá")
+    p_sub = doc.add_paragraph("Direitos Humanos · Paraíba · Brasil")
     p_sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_sub.runs[0].font.size = Pt(10); p_sub.runs[0].font.color.rgb = GRAY_MID
     p_sub.runs[0].font.name = "Georgia"
@@ -355,7 +369,7 @@ def add_pptx_bg(slide, color: PPTXRGBColor):
     fill.fore_color.rgb = color
 
 def add_text_box(slide, text, left, top, width, height,
-                 font_name="Georgia", font_size=24, bold=False,
+                 font_name="Fraunces", font_size=24, bold=False,
                  color: PPTXRGBColor = None, align=PP_ALIGN.LEFT):
     txBox = slide.shapes.add_textbox(left, top, width, height)
     tf = txBox.text_frame
@@ -403,14 +417,14 @@ def gerar_apresentacao():
     add_text_box(
         slide, "DIGNITATIS",
         Inches(1), Inches(1.5), Inches(11), Inches(1.2),
-        font_name="Georgia", font_size=54, bold=True,
+        font_name="Fraunces", font_size=54, bold=True,
         color=PPTX_CREAM, align=PP_ALIGN.LEFT
     )
     # Tagline
     add_text_box(
-        slide, "Dignidade · Dignidad · Tekó Porã · Ọlá",
+        slide, "Direitos Humanos · Paraíba · Brasil",
         Inches(1), Inches(2.9), Inches(11), Inches(0.5),
-        font_name="Georgia", font_size=13,
+        font_name="Fraunces", font_size=13,
         color=PPTX_GRAY, align=PP_ALIGN.LEFT
     )
     # Linha verde
@@ -420,13 +434,13 @@ def gerar_apresentacao():
     add_text_box(
         slide, "[Título da Apresentação]",
         Inches(1), Inches(3.8), Inches(11), Inches(1),
-        font_name="Calibri", font_size=22,
+        font_name="Source Sans Pro", font_size=22,
         color=PPTX_CREAM, align=PP_ALIGN.LEFT
     )
     add_text_box(
         slide, "[Subtítulo / Evento / Data]",
         Inches(1), Inches(4.7), Inches(11), Inches(0.7),
-        font_name="Calibri", font_size=14,
+        font_name="Source Sans Pro", font_size=14,
         color=PPTX_GRAY, align=PP_ALIGN.LEFT
     )
 
@@ -438,7 +452,7 @@ def gerar_apresentacao():
     add_text_box(
         slide2, "SUMÁRIO",
         Inches(1), Inches(0.4), Inches(11), Inches(0.8),
-        font_name="Georgia", font_size=28, bold=True,
+        font_name="Fraunces", font_size=28, bold=True,
         color=PPTX_DARK_GREEN, align=PP_ALIGN.LEFT
     )
     add_rect(slide2, Inches(1), Inches(1.2), Inches(5), Inches(0.04), PPTX_GREEN)
@@ -454,7 +468,7 @@ def gerar_apresentacao():
         add_text_box(
             slide2, topico,
             Inches(1), Inches(1.5 + i * 0.85), Inches(11), Inches(0.7),
-            font_name="Calibri", font_size=16,
+            font_name="Source Sans Pro", font_size=16,
             color=PPTX_BLACK, align=PP_ALIGN.LEFT
         )
 
@@ -466,7 +480,7 @@ def gerar_apresentacao():
     add_text_box(
         slide3, "[Título da Seção]",
         Inches(1), Inches(0.4), Inches(11), Inches(0.8),
-        font_name="Georgia", font_size=28, bold=True,
+        font_name="Fraunces", font_size=28, bold=True,
         color=PPTX_DARK_GREEN, align=PP_ALIGN.LEFT
     )
     add_rect(slide3, Inches(1), Inches(1.2), Inches(5), Inches(0.04), PPTX_GREEN)
@@ -475,7 +489,7 @@ def gerar_apresentacao():
         slide3,
         "• [Ponto principal 1]\n• [Ponto principal 2]\n• [Ponto principal 3]\n• [Ponto principal 4]",
         Inches(1), Inches(1.4), Inches(6), Inches(4),
-        font_name="Calibri", font_size=16,
+        font_name="Source Sans Pro", font_size=16,
         color=PPTX_BLACK, align=PP_ALIGN.LEFT
     )
 
@@ -484,32 +498,32 @@ def gerar_apresentacao():
     add_text_box(
         slide3, "[Dado ou citação em destaque]",
         Inches(8.2), Inches(2.2), Inches(4.1), Inches(2.5),
-        font_name="Georgia", font_size=18,
+        font_name="Fraunces", font_size=18,
         color=PPTX_CREAM, align=PP_ALIGN.CENTER
     )
 
     # ── Slide 4: Citação / Destaque ──────────────────────────────────────────
     slide4 = prs.slides.add_slide(blank)
-    add_pptx_bg(slide4, PPTX_GREEN)
-    add_rect(slide4, Inches(0), Inches(0), Inches(0.25), H, PPTX_DARK_GREEN)
+    add_pptx_bg(slide4, PPTX_TERRA)
+    add_rect(slide4, Inches(0), Inches(0), Inches(0.25), H, PPTX_NOITE)
 
     add_text_box(
         slide4, "“",
         Inches(1), Inches(0.8), Inches(2), Inches(1.5),
-        font_name="Georgia", font_size=96, bold=True,
+        font_name="Fraunces", font_size=96, bold=True,
         color=PPTX_CREAM, align=PP_ALIGN.LEFT
     )
     add_text_box(
         slide4, "[Insira aqui uma citação impactante ou dado relevante sobre direitos humanos.]",
         Inches(1.5), Inches(1.8), Inches(10), Inches(2.5),
-        font_name="Georgia", font_size=22,
+        font_name="Fraunces", font_size=22,
         color=PPTX_CREAM, align=PP_ALIGN.LEFT
     )
     add_text_box(
         slide4, "— [Fonte / Autoria]",
         Inches(1.5), Inches(4.5), Inches(10), Inches(0.6),
-        font_name="Calibri", font_size=13,
-        color=hex_to_pptx("F4F1EB"), align=PP_ALIGN.LEFT
+        font_name="Source Sans Pro", font_size=13,
+        color=hex_to_pptx("F9F5EF"), align=PP_ALIGN.LEFT
     )
 
     # ── Slide 5: Encerramento ────────────────────────────────────────────────
@@ -520,7 +534,7 @@ def gerar_apresentacao():
     add_text_box(
         slide5, "Obrigado(a)",
         Inches(1), Inches(1.8), Inches(11), Inches(1.2),
-        font_name="Georgia", font_size=48, bold=True,
+        font_name="Fraunces", font_size=48, bold=True,
         color=PPTX_CREAM, align=PP_ALIGN.LEFT
     )
     add_rect(slide5, Inches(1), Inches(3.1), Inches(3), Inches(0.04), PPTX_GREEN)
@@ -528,19 +542,19 @@ def gerar_apresentacao():
     add_text_box(
         slide5, "DIGNITATIS",
         Inches(1), Inches(3.3), Inches(11), Inches(0.7),
-        font_name="Georgia", font_size=18, bold=True,
+        font_name="Fraunces", font_size=18, bold=True,
         color=PPTX_GREEN, align=PP_ALIGN.LEFT
     )
     add_text_box(
-        slide5, "Dignidade · Dignidad · Tekó Porã · Ọlá",
+        slide5, "Direitos Humanos · Paraíba · Brasil",
         Inches(1), Inches(4.0), Inches(11), Inches(0.5),
-        font_name="Georgia", font_size=11,
+        font_name="Fraunces", font_size=11,
         color=PPTX_GRAY, align=PP_ALIGN.LEFT
     )
     add_text_box(
         slide5, "[e-mail]  ·  [site]  ·  [redes sociais]",
         Inches(1), Inches(4.7), Inches(11), Inches(0.5),
-        font_name="Calibri", font_size=12,
+        font_name="Source Sans Pro", font_size=12,
         color=PPTX_GRAY, align=PP_ALIGN.LEFT
     )
 
