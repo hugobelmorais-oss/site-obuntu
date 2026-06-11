@@ -31,11 +31,17 @@ A nova identidade visual reflete esse duplo caráter: séria o suficiente para t
 
 ### 3.1 O Símbolo
 
-Figura humana geométrica estilizada com braços erguidos ou estendidos — postura de proteção e advocacia. Construída a partir de formas geométricas simples, sem detalhes, forte e legível em qualquer escala. A figura representa a centralidade da pessoa humana no trabalho da organização: não abstrata, não decorativa — uma pessoa de pé, reivindicando dignidade.
+**Arco duplo horizonte** — forma abstrata geométrica composta por um arco espesso em terracota (anel superior) e uma cúpula interna em azul-noite, separados por uma linha base horizontal. O símbolo evoca o horizonte do semiárido nordestino ao amanhecer: a alba como metáfora de luta e esperança, o chão como enraizamento comunitário.
 
-### 3.2 Wordmark
+A construção é inteiramente geométrica — sem ilustrações, sem gradientes, sem detalhes decorativos. Legível a 32px (favicon) e em escala de banner. O símbolo conecta dois eixos do trabalho da Dignitatis: **direitos humanos** (o horizonte sempre aberto, a luta constante) e **mudanças climáticas** (a terra, o sol, a crise ambiental que recai sobre as comunidades que a organização defende).
 
-**DIGNITATIS** em tipografia serifada contemporânea (Fraunces Bold), caixa alta, tracking amplo. A força do nome está no equilíbrio entre a solenidade do latim e a abertura da postura contemporânea.
+### 3.2 Wordmark e Tagline
+
+Assinatura visual em dois níveis:
+
+**Nível 1 — Wordmark:** **DIGNITATIS** em tipografia serifada contemporânea (Fraunces Bold), caixa alta, tracking amplo, Azul-Noite. A solenidade do latim afirma a seriedade jurídica da organização.
+
+**Nível 2 — Tagline:** **direitos humanos . PB** em Source Sans Pro SemiBold, caixa baixa, separador ponto centralizado, Cinza-Quente (#9E8E7C), aproximadamente 22–25% da altura do DIGNITATIS, centralizada sob a wordmark. A tagline é parte **fixa** da assinatura visual em todas as variantes (exceto ícone solo). Nunca substituir, omitir ou reposicionar independentemente.
 
 ### 3.3 Variantes
 
@@ -49,11 +55,11 @@ Figura humana geométrica estilizada com braços erguidos ou estendidos — post
 
 ### 3.4 Área de Proteção
 
-Espaço mínimo ao redor do logo equivalente à **altura da figura humana** em todos os lados. Nenhum elemento externo deve invadir essa área.
+Espaço mínimo ao redor do logo equivalente à **altura do símbolo** (diâmetro do arco) em todos os lados. Nenhum elemento externo deve invadir essa área.
 
 ### 3.5 Tamanho Mínimo
 
-- **Digital**: 100px de largura (versão completa) / 32px (ícone)
+- **Digital**: 120px de largura (versão completa) / 32px (ícone)
 - **Impresso**: 25mm de largura (versão completa) / 8mm (ícone)
 
 ### 3.6 Usos Proibidos
@@ -183,13 +189,28 @@ Todos os templates estão na conta Canva da organização, com IDs abaixo.
 
 ### 7.3 Arquivos de Logo (`assets/images/`)
 
+**Designs editáveis no Canva:**
+
+| Variante | Design ID Canva | Uso |
+|---|---|---|
+| Completo (símbolo + wordmark + tagline, lado a lado) | `DAHMTD0mcKY` | Uso principal |
+| Compacto (empilhado) | `DAHMTG0aTMI` | Cabeçalhos estreitos, e-mail |
+| Ícone (só símbolo) | `DAHMTJyD8fw` | Avatar, favicon, selo |
+
+**Arquivos PNG exportados (`assets/images/`):**
+
 | Arquivo | Formato | Uso |
 |---|---|---|
 | `dignitatis-logo-completo.png` | PNG (fundo transparente) | Uso geral digital |
 | `dignitatis-logo-compacto.png` | PNG (fundo transparente) | Cabeçalhos, e-mails |
-| `dignitatis-logo-icone.png` | PNG (fundo branco quadrado) | Avatares, favicon |
-| `dignitatis-logo-escuro.png` | PNG (fundo transparente) | Impressão P&B |
-| `dignitatis-logo-branco.png` | PNG (fundo transparente) | Fundos escuros |
+| `dignitatis-logo-icone.png` | PNG (fundo transparente) | Avatares, favicon |
+| `dignitatis-logo-escuro.png` | PNG (fundo transparente) | Impressão P&B, fundo claro |
+| `dignitatis-logo-branco.png` | PNG (fundo transparente) | Fundos escuros (navy, terracota) |
+
+**Para regenerar os PNGs locais:**
+```bash
+python3 assets/images/gerar_logos.py
+```
 
 ---
 

@@ -1,150 +1,168 @@
 """
-Gera arquivos SVG e PNG para as 5 variantes da logomarca Dignitatis.
-Figura humana estilizada (braços erguidos) + wordmark DIGNITATIS.
+Gera arquivos PNG para as 5 variantes da logomarca Dignitatis.
+Símbolo: arco duplo horizonte (terracota + navy) — evoca alba do semiárido,
+         luta por direitos humanos no contexto das mudanças climáticas.
+Wordmark: DIGNITATIS (Liberation Serif Bold / Fraunces)
+Tagline:  direitos humanos . PB
 """
 
 from PIL import Image, ImageDraw, ImageFont
 from pathlib import Path
-import math
 
 OUT = Path(__file__).parent
 
-# Brand colors
 TERRACOTA  = (181, 78, 49, 255)    # #B54E31
 AZUL_NOITE = (15, 31, 61, 255)     # #0F1F3D
 AREIA      = (249, 245, 239, 255)  # #F9F5EF
 BRANCO     = (255, 255, 255, 255)
 TRANSP     = (0, 0, 0, 0)
 
-FONT_PATH  = "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"
+FONT_BOLD  = "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"
+FONT_SEMI  = "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"
+FONT_SANS  = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
 
 
-def figure_polygons(cx, cy, scale=1.0):
+def draw_arc_symbol(draw, cx, cy, scale, arc_color, dome_color, bg_color):
     """
-    Returns (head_circle, body_polygon, left_arm_polygon, right_arm_polygon)
-    for a geometric human figure with arms raised.
-    cx, cy = center-x, bottom-center-y of bounding box
-    scale  = pixels per unit (unit ~= figure height 100)
+    Arco duplo horizonte: arco grosso (arc_color) com cúpula interna (dome_color).
+    cy = baseline y (ponto inferior do símbolo).
+    scale = pixels por unidade (unidade de referência: raio externo = 100).
     """
     s = scale
-
-    # Head: circle at top center
-    head_cx = cx
-    head_cy = cy - 88 * s
-    head_r  = 14 * s
-
-    # Shoulders at y = cy - 68*s
-    # Body: from shoulders down
-    body = [
-        (cx - 17*s, cy - 68*s),  # upper-left shoulder
-        (cx + 17*s, cy - 68*s),  # upper-right shoulder
-        (cx + 14*s, cy),          # lower-right
-        (cx - 14*s, cy),          # lower-left
-    ]
-
-    # Left arm: extends upward-left from left shoulder
-    # Arm goes from shoulder corner, sweeps up to arm tip, returns
-    larm = [
-        (cx - 17*s, cy - 68*s),  # shoulder connect (same as body UL)
-        (cx - 14*s, cy - 80*s),  # inner arm base
-        (cx - 38*s, cy - 90*s),  # arm tip inner
-        (cx - 44*s, cy - 76*s),  # arm tip outer
-        (cx - 26*s, cy - 62*s),  # outer shoulder
-    ]
-
-    # Right arm: mirror of left
-    rarm = [
-        (cx + 17*s, cy - 68*s),
-        (cx + 14*s, cy - 80*s),
-        (cx + 38*s, cy - 90*s),
-        (cx + 44*s, cy - 76*s),
-        (cx + 26*s, cy - 62*s),
-    ]
-
-    return head_cx, head_cy, head_r, body, larm, rarm
+    outer_r = int(100 * s)
+    # Arco terracota externo: meia-elipse superior
+    draw.pieslice(
+        [cx - outer_r, cy - outer_r, cx + outer_r, cy + outer_r],
+        start=180, end=0, fill=arc_color
+    )
+    # Corte interno (cria espessura do arco ~30% do raio)
+    cut_r = int(68 * s)
+    draw.pieslice(
+        [cx - cut_r, cy - cut_r, cx + cut_r, cy + cut_r],
+        start=180, end=0, fill=bg_color
+    )
+    # Cúpula navy interna
+    dome_rx = int(58 * s)
+    dome_ry = int(38 * s)
+    draw.pieslice(
+        [cx - dome_rx, cy - dome_ry, cx + dome_rx, cy + dome_ry],
+        start=180, end=0, fill=dome_color
+    )
+    # Linha de base horizontal (navy/arc_color)
+    lw = max(3, int(5 * s))
+    draw.rectangle(
+        [cx - outer_r, cy - lw, cx + outer_r, cy + lw],
+        fill=dome_color
+    )
 
 
-def draw_figure(draw, cx, cy, scale, color):
-    hcx, hcy, hr, body, larm, rarm = figure_polygons(cx, cy, scale)
-    draw.ellipse([hcx - hr, hcy - hr, hcx + hr, hcy + hr], fill=color)
-    draw.polygon(body, fill=color)
-    draw.polygon(larm, fill=color)
-    draw.polygon(rarm, fill=color)
-
-
-def make_completo(bg=(0,0,0,0), fig_color=TERRACOTA, text_color=AZUL_NOITE):
-    W, H = 1200, 420
+def make_completo(bg=TRANSP, arc_color=TERRACOTA, dome_color=AZUL_NOITE,
+                  text_color=AZUL_NOITE, tag_color=(158, 142, 124, 255)):
+    W, H = 1400, 420
     img = Image.new("RGBA", (W, H), bg)
     draw = ImageDraw.Draw(img)
 
-    # Figure on the left
-    draw_figure(draw, cx=170, cy=370, scale=3.5, color=fig_color)
+    # Símbolo à esquerda
+    sym_scale = 1.7
+    sym_cx = 185
+    sym_cy = 290
+    draw_arc_symbol(draw, sym_cx, sym_cy, sym_scale, arc_color, dome_color,
+                    bg if bg != TRANSP else (0, 0, 0, 0))
 
-    # Wordmark to the right
+    # Wordmark DIGNITATIS
     try:
-        font = ImageFont.truetype(FONT_PATH, 110)
+        font_main = ImageFont.truetype(FONT_BOLD, 105)
+        font_tag  = ImageFont.truetype(FONT_SANS, 38)
     except Exception:
-        font = ImageFont.load_default()
+        font_main = ImageFont.load_default()
+        font_tag  = font_main
 
-    draw.text((340, 120), "DIGNITATIS", font=font, fill=text_color)
+    draw.text((355, 115), "DIGNITATIS", font=font_main, fill=text_color)
+
+    # Tagline
+    bbox = draw.textbbox((0, 0), "DIGNITATIS", font=font_main)
+    wm_w = bbox[2] - bbox[0]
+    tag_text = "direitos humanos . PB"
+    tag_bbox = draw.textbbox((0, 0), tag_text, font=font_tag)
+    tag_w = tag_bbox[2] - tag_bbox[0]
+    tag_x = 355 + (wm_w - tag_w) // 2
+    draw.text((tag_x, 240), tag_text, font=font_tag, fill=tag_color)
     return img
 
 
-def make_compacto(bg=(0,0,0,0), fig_color=TERRACOTA, text_color=AZUL_NOITE):
-    W, H = 700, 700
+def make_compacto(bg=TRANSP, arc_color=TERRACOTA, dome_color=AZUL_NOITE,
+                  text_color=AZUL_NOITE, tag_color=(158, 142, 124, 255)):
+    W, H = 700, 680
     img = Image.new("RGBA", (W, H), bg)
     draw = ImageDraw.Draw(img)
 
-    # Figure centered on top half
-    draw_figure(draw, cx=350, cy=420, scale=3.8, color=fig_color)
+    # Símbolo centralizado no topo
+    sym_scale = 2.2
+    sym_cx = W // 2
+    sym_cy = 260
+    draw_arc_symbol(draw, sym_cx, sym_cy, sym_scale, arc_color, dome_color,
+                    bg if bg != TRANSP else (0, 0, 0, 0))
 
-    # Wordmark below, centered
     try:
-        font = ImageFont.truetype(FONT_PATH, 72)
+        font_main = ImageFont.truetype(FONT_BOLD, 82)
+        font_tag  = ImageFont.truetype(FONT_SANS, 30)
     except Exception:
-        font = ImageFont.load_default()
+        font_main = ImageFont.load_default()
+        font_tag  = font_main
 
-    bbox = draw.textbbox((0, 0), "DIGNITATIS", font=font)
+    # DIGNITATIS centralizado
+    bbox = draw.textbbox((0, 0), "DIGNITATIS", font=font_main)
     tw = bbox[2] - bbox[0]
-    draw.text(((W - tw) // 2, 455), "DIGNITATIS", font=font, fill=text_color)
+    draw.text(((W - tw) // 2, 310), "DIGNITATIS", font=font_main, fill=text_color)
+
+    # Tagline centralizada
+    tag_text = "direitos humanos . PB"
+    tag_bbox = draw.textbbox((0, 0), tag_text, font=font_tag)
+    tag_w = tag_bbox[2] - tag_bbox[0]
+    draw.text(((W - tag_w) // 2, 415), tag_text, font=font_tag, fill=tag_color)
     return img
 
 
-def make_icone(bg=(0,0,0,0), fig_color=TERRACOTA):
-    W, H = 500, 500
+def make_icone(bg=TRANSP, arc_color=TERRACOTA, dome_color=AZUL_NOITE):
+    W, H = 500, 320
     img = Image.new("RGBA", (W, H), bg)
     draw = ImageDraw.Draw(img)
-    draw_figure(draw, cx=250, cy=440, scale=4.0, color=fig_color)
+    draw_arc_symbol(draw, W // 2, H - 40, 2.2, arc_color, dome_color,
+                    bg if bg != TRANSP else (0, 0, 0, 0))
     return img
 
 
 def save_variants():
-    # 1. Completo — terracota figure, navy wordmark, transparent bg
+    # 1. Completo — terracota arc, navy dome, navy wordmark, transparent bg
     make_completo().save(OUT / "dignitatis-logo-completo.png")
     print("  ✓ dignitatis-logo-completo.png")
 
-    # 2. Compacto — stacked, transparent bg
+    # 2. Compacto — empilhado, transparent bg
     make_compacto().save(OUT / "dignitatis-logo-compacto.png")
     print("  ✓ dignitatis-logo-compacto.png")
 
-    # 3. Ícone — symbol only, transparent bg
+    # 3. Ícone — só símbolo
     make_icone().save(OUT / "dignitatis-logo-icone.png")
     print("  ✓ dignitatis-logo-icone.png")
 
-    # 4. Escuro — monochrome navy figure + navy wordmark
-    make_completo(fig_color=AZUL_NOITE, text_color=AZUL_NOITE).save(
+    # 4. Escuro — tudo navy (monocromático)
+    CINZA_NOITE = (158, 142, 124, 255)
+    make_completo(arc_color=AZUL_NOITE, dome_color=(8, 16, 30, 255),
+                  text_color=AZUL_NOITE, tag_color=CINZA_NOITE).save(
         OUT / "dignitatis-logo-escuro.png"
     )
     print("  ✓ dignitatis-logo-escuro.png")
 
-    # 5. Branco — white figure + white wordmark (for dark backgrounds)
-    make_completo(fig_color=BRANCO, text_color=BRANCO).save(
+    # 5. Branco — tudo branco (para fundos escuros)
+    BRANCO_TAG = (220, 215, 205, 255)
+    make_completo(arc_color=BRANCO, dome_color=(200, 195, 185, 255),
+                  text_color=BRANCO, tag_color=BRANCO_TAG).save(
         OUT / "dignitatis-logo-branco.png"
     )
     print("  ✓ dignitatis-logo-branco.png")
 
 
 if __name__ == "__main__":
-    print("Gerando variantes da logomarca Dignitatis...")
+    print("Gerando variantes da logomarca Dignitatis (arco horizonte)...")
     save_variants()
     print(f"Concluído: {OUT}")
